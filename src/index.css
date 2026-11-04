@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+  code, pre, .font-mono {
+    font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  }
+}
+
+/* Custom scrollbar for clean aesthetics */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.2);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.4);
+}
+
+/* Print view optimization for standard resume PDF export */
+@media print {
+  body {
+    background: white !important;
+    color: #111827 !important;
+  }
+  header, footer, nav, button, #about, #projects, #experience, #skills, #contact {
+    display: none !important;
+  }
+  #resume {
+    padding: 0 !important;
+    border: none !important;
+    margin: 0 !important;
+  }
+  #printable-cv {
+    box-shadow: none !important;
+    border: none !important;
+    max-width: 100% !important;
+    color: #111827 !important;
+    background: white !important;
+  }
+}
